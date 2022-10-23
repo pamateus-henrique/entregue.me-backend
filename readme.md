@@ -1,1 +1,0 @@
-open source delivery plataform developed by @pamateus-henrique and @victor.trani

@@ -21,6 +21,15 @@ const ProductSchema = new mongoose.Schema({
         type: String
     },
 
+    category: {
+        type: String,
+        enum: {
+            values: ['bebida', 'pizzas'],
+            message: ['this is not a valid type of category']
+        },
+        required: [true, 'category is required']
+    },
+
     createdAt: {
         type: Date,
         default: Date.now()
