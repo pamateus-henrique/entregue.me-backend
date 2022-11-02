@@ -8,14 +8,18 @@ require('dotenv').config();
 
 const notFound = require('./middleware/not-found');
 const errorHandler = require('./middleware/error-handler');
+const cors = require('cors');
+
 
 //middlewares
+app.use(cors());
 app.use(express.static('./public'));
 app.use(express.json());
 const port = 8080;
 
 //routes
 app.use('/api/v1/products', products);
+
 app.use(notFound);
 app.use(errorHandler);
 

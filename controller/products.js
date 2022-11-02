@@ -30,12 +30,12 @@ const getProducts = async (req,res) => {
           (match) => `-${operatorMap[match]}-`
         );
         const options = ['price'];
-        filters = filters.split(',').forEach((item) => {
-            console.log(`item: ${item}`);
-          const [field, operator, value] = item.split('-');
-          if (options.includes(field)) {
-            queryObject[field] = { [operator]: Number(value) };
-          }
+          filters = filters.split(',').forEach((item) => {
+              console.log(`item: ${item}`);
+            const [field, operator, value] = item.split('-');
+            if (options.includes(field)) {
+              queryObject[field] = { [operator]: Number(value) };
+            }
         });
       }
 
