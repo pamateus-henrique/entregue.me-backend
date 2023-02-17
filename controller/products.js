@@ -1,5 +1,4 @@
 const Product = require('../models/Products');
-const asyncWrapper = require('../middleware/async');
 
 const getProducts = async (req,res) => {
     const {numericFilters, name, category, fields, sort} = req.query;
@@ -85,7 +84,7 @@ const getSingleProduct = async (req,res, next) => {
 
 const insertProduct = async (req,res) => {
     const result = await Product.create(req.body);
-    res.status(201);
+    res.status(201).json({result});
 }
 
 
